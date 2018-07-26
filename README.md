@@ -1,4 +1,4 @@
-# docxParser
+# docxParserServlet
 Sometimes it is required to parse MS Office documents word documents more often to put data into a database.
 
 Every word document is a .docx file which is an archieve consisting XML files.
