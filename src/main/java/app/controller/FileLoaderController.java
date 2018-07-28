@@ -1,6 +1,7 @@
 package app.controller;
 
-import app.model.xmlparser.ParserConstants;
+import app.controller.pojo.FileUpload;
+import app.model.service.xmlparser.util.ParserConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;

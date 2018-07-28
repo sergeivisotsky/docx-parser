@@ -1,5 +1,6 @@
-package app.controller;
+package app.controller.util;
 
+import app.controller.pojo.FileUpload;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

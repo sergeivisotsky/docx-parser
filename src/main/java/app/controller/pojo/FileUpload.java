@@ -1,4 +1,4 @@
-package app.controller;
+package app.controller.pojo;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;

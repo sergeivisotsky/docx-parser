@@ -4,32 +4,32 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <display-name>docx Parser Servlet</display-name>
+    <display-firstName>docx Parser Servlet</display-firstName>
 
     <context-param>
-        <param-name>contextConfigLocation</param-name>
+        <param-firstName>contextConfigLocation</param-firstName>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
     <servlet>
-        <servlet-name>docx_parser</servlet-name>
+        <servlet-firstName>docx_parser</servlet-firstName>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
         <init-param>
-            <param-name>contextConfigLocation</param-name>
+            <param-firstName>contextConfigLocation</param-firstName>
             <param-value>/WEB-INF/dispatcherServlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>docx_parser</servlet-name>
+        <servlet-firstName>docx_parser</servlet-firstName>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>docx_parser</servlet-name>
+        <servlet-firstName>docx_parser</servlet-firstName>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
 
@@ -38,22 +38,22 @@
     </welcome-file-list>
 
     <filter>
-        <filter-name>encodingFilter</filter-name>
+        <filter-firstName>encodingFilter</filter-firstName>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 
         <init-param>
-            <param-name>encoding</param-name>
+            <param-firstName>encoding</param-firstName>
             <param-value>UTF-8</param-value>
         </init-param>
 
         <init-param>
-            <param-name>forceEncoding</param-name>
+            <param-firstName>forceEncoding</param-firstName>
             <param-value>true</param-value>
         </init-param>
     </filter>
 
     <filter-mapping>
-        <filter-name>encodingFilter</filter-name>
+        <filter-firstName>encodingFilter</filter-firstName>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
