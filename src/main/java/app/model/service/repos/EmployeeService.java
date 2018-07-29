@@ -1,4 +1,4 @@
-package app.model.service.document.repos;
+package app.model.service.repos;
 
 import org.springframework.stereotype.Repository;
 

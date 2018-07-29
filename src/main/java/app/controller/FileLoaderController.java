@@ -1,7 +1,11 @@
 package app.controller;
 
 import app.controller.pojo.FileUpload;
-import app.model.service.xmlparser.util.ParserConstants;
+import app.model.service.repos.EmployeeService;
+import app.model.xmlparser.parser.Parser;
+import app.model.xmlparser.parser.XmlExtraction;
+import app.model.xmlparser.util.ParserConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
@@ -16,6 +20,12 @@ import java.io.IOException;
 
 @Controller
 public class FileLoaderController {
+
+    @Autowired
+    private EmployeeService employeeService;
+
+    @Autowired
+    private Parser parser;
 
     // Method to display start page
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -45,6 +55,9 @@ public class FileLoaderController {
         FileCopyUtils.copy(multipartFile.getBytes(),
                 new File(ParserConstants.UPL_DIR + multipartFile.getOriginalFilename()));
         fileName = multipartFile.getOriginalFilename();
+
+        parser.setXmlExtractionService(new XmlExtraction(multipartFile));
+        employeeService.readEmployeeData();
 
         return fileName;
     }
