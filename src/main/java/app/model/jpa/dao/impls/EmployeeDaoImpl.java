@@ -13,7 +13,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     private static final Logger LOGGER = Logger.getLogger(EmployeeDaoImpl.class);
 
-    private static final String SQL_ADD_RECORD = "INSERT INTO employee(name, surname, age, position, experience) " +
+    private static final String SQL_ADD_RECORD = "INSERT INTO employee(first_name, last_name, age, posit, experience) " +
             "VALUES(?, ?, ?, ?, ?)";
 
     @Autowired
