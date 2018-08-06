@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta content="text/html" charset="UTF-8">
-    <title>docx processor - success</title>
+    <title>docx parser - success</title>
 </head>
 <body>
 

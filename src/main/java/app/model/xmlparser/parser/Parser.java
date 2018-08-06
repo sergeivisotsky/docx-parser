@@ -36,7 +36,9 @@ public class Parser {
                     Element paramElem = (Element) dataNode;
                     param = paramElem.getElementsByTagName("w:t")
                             .item(0)
-                            .getTextContent();
+                            .getTextContent()
+                            .trim();
+//                            .replace(" ", "");
                     return param;
                 }
             }

@@ -1,6 +1,6 @@
 package app.model.service.impls;
 
-import app.model.jpa.dao.repos.EmployeeDao;
+import app.model.jpa.dao.repos.EmployeeDАО;
 import app.model.jpa.entities.Employee;
 import app.model.service.repos.EmployeeService;
 import app.model.xmlparser.parser.Parser;
@@ -14,7 +14,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private static final Logger LOGGER = Logger.getLogger(EmployeeServiceImpl.class);
 
     @Autowired
-    private EmployeeDao employeeDao;
+    private EmployeeDАО employeeDАО;
 
     @Autowired
     private Parser parser;
@@ -39,6 +39,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             LOGGER.error(e);
         }
 
-        employeeDao.addRecord(employee);
+        employeeDАО.addRecord(employee);
     }
 }

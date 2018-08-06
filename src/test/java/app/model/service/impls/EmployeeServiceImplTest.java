@@ -1,6 +1,6 @@
 package app.model.service.impls;
 
-import app.model.jpa.dao.repos.EmployeeDao;
+import app.model.jpa.dao.repos.EmployeeDАО;
 import app.model.jpa.entities.Employee;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,7 @@ import static org.testng.Assert.assertEquals;
 @ContextConfiguration("/test-context.xml")
 public class EmployeeServiceImplTest {
     @Autowired
-    private EmployeeDao employeeDao;
+    private EmployeeDАО employeeDАО;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -24,7 +24,7 @@ public class EmployeeServiceImplTest {
     public void testDataFlow() {
         final String SQL_SELECT_NAME = "SELECT first_name FROM employee WHERE emp_id = ?";
         Employee employee = new Employee("John", "Smith", 25, "manager", 5);
-        employeeDao.addRecord(employee);
+        employeeDАО.addRecord(employee);
 //        assertEquals((long) 1, (long) employee.getEmpId());
         assertEquals("John", employee.getFirstName());
         assertEquals("Smith", employee.getLastName());
