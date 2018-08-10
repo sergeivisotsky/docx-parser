@@ -10,7 +10,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean name="fileUpload" class="app.controller.pojo.FileUpload"/>
+    <bean name="fileUpload" class="org.sergei.parser.controller.pojo.FileUploadVO"/>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="10000000"/>
