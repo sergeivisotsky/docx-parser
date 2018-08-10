@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.IOException;
-
 @Controller
 public class FileController {
 
@@ -42,7 +40,7 @@ public class FileController {
             return new ModelAndView("upload_page");
         }
 
-        return new ModelAndView("success", "fileName", processUpload(fileUploadVO));
+        return new ModelAndView("uploaded", "fileName", processUpload(fileUploadVO));
     }
 
     // File upload processing method
