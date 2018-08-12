@@ -19,5 +19,5 @@ But in this case xPath is used to parse XML due to every XML node needs to be pu
 ## Program setup on the local machine
 * Open app.properties file
 * In this file setup your FTP and database credentials
-* Open file log4j.properties\
+* Open file log4j.properties
 * Change path to your log file "log4j.appender.file.File"
