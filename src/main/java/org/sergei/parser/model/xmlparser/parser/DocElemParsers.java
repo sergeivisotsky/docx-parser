@@ -22,8 +22,8 @@ public class DocElemParsers {
         xmlExtractionService.parseXmlFile();
     }
 
-    public Object xmlDataParser(String expr) {
-        Object param;
+    public Object xmlDataTextParser(String expr) {
+        String param;
         try {
             NodeList dataNodeList = (NodeList) xmlExtractionService.getXPath().compile(expr)
                     .evaluate(xmlExtractionService.getDocument(), XPathConstants.NODESET);
@@ -38,7 +38,31 @@ public class DocElemParsers {
                             .item(0)
                             .getTextContent()
                             .trim();
-//                            .replace(" ", "");
+                    return param;
+                }
+            }
+        } catch (XPathExpressionException e) {
+            LOGGER.error(e.getMessage());
+        }
+        return null;
+    }
+
+    public Integer xmlDataIntParser(String expr) {
+        Integer param;
+        try {
+            NodeList dataNodeList = (NodeList) xmlExtractionService.getXPath().compile(expr)
+                    .evaluate(xmlExtractionService.getDocument(), XPathConstants.NODESET);
+
+            for (int i = 0; i < dataNodeList.getLength(); i++) {
+
+                Node dataNode = dataNodeList.item(i);
+
+                if (dataNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element paramElem = (Element) dataNode;
+                    param = Integer.parseInt(paramElem.getElementsByTagName("w:t")
+                            .item(0)
+                            .getTextContent()
+                            .trim());
                     return param;
                 }
             }

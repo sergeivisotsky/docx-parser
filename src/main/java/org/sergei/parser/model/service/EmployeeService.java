@@ -18,22 +18,22 @@ public class EmployeeService implements CustomServiceRepository {
     @Autowired
     private DocElemParsers docElemParsers;
 
-    private static final String EXPR_FIRST_NAME = "/w:document/w:body/w:p[2]/w:r[2]";
-    private static final String EXPR_LAST_LAME = "/w:document/w:body/w:p[3]/w:r[2]";
-    private static final String EXPR_AGE = "/w:document/w:body/w:p[4]/w:r[2]";
-    private static final String EXPR_POSITION = "/w:document/w:body/w:p[5]/w:r[2]";
-    private static final String EXPR_EXPERIENCE = "/w:document/w:body/w:p[5]/w:r[2]";
+    private static final String EXPR_FIRST_NAME = "/w:document/w:body/w:p[@w14:paraId='3DC39470']/w:r[2]";
+    private static final String EXPR_LAST_LAME = "/w:document/w:body/w:p[@w14:paraId='18B9EE55']/w:r[2]";
+    private static final String EXPR_AGE = "/w:document/w:body/w:p[@w14:paraId='04AE3ECF']/w:r[2]";
+    private static final String EXPR_POSITION = "/w:document/w:body/w:p[@w14:paraId='7EA3CB2F']/w:r[3]";
+    private static final String EXPR_EXPERIENCE = "/w:document/w:body/w:p[@w14:paraId='3C65B030']/w:r[2]";
 
     @Override
     public void read() {
         Employee employee = new Employee();
 
         try {
-            employee.setFirstName((String) docElemParsers.xmlDataParser(EXPR_FIRST_NAME));
-            employee.setLastName((String) docElemParsers.xmlDataParser(EXPR_LAST_LAME));
-            employee.setAge(Integer.parseInt((String) docElemParsers.xmlDataParser(EXPR_AGE)));
-            employee.setPosition((String) docElemParsers.xmlDataParser(EXPR_POSITION));
-            employee.setExperience(Integer.parseInt((String) docElemParsers.xmlDataParser(EXPR_EXPERIENCE)));
+            employee.setFirstName((String) docElemParsers.xmlDataTextParser(EXPR_FIRST_NAME));
+            employee.setLastName((String) docElemParsers.xmlDataTextParser(EXPR_LAST_LAME));
+            employee.setAge(Integer.parseInt((String) docElemParsers.xmlDataTextParser(EXPR_AGE)));
+            employee.setPosition((String) docElemParsers.xmlDataTextParser(EXPR_POSITION));
+            employee.setExperience(Integer.parseInt((String) docElemParsers.xmlDataTextParser(EXPR_EXPERIENCE)));
         } catch (NumberFormatException e) {
             LOGGER.error(e);
         }
