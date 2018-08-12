@@ -21,3 +21,5 @@ But in this case xPath is used to parse XML due to every XML node needs to be pu
 * In this file setup your FTP and database credentials
 * Open file log4j.properties
 * Change path to your log file "log4j.appender.file.File"
+
+INFO: Example .docx to parse as well as unarchived .docx are located in /resources/docs folder.
