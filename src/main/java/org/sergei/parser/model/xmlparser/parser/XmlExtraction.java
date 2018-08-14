@@ -64,7 +64,7 @@ public class XmlExtraction {
             builderFactory.setNamespaceAware(true); // Sets DocumentBuilderFactory to be namespace sensitive
 
             // define namespaces
-            HashMap<String, String> prefMap = new HashMap<>() {{
+            HashMap<String, String> prefMap = new HashMap<String, String>() {{
                 put("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
                 put("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             }};

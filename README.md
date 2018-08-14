@@ -5,7 +5,7 @@
 * After .docx file is uploaded it should be stored on the server using FTP
 * During the upload document.xml file should be extracted from the .docx file
 * After document.xml should be parsed in memory to extract all the necessary at put it to the relational database
-* It should be able to download data from the server via FTP (UNDER CONSTRUCTION)
+* It should be able to download data from the server via FTP
 
 ## Specification
 Sometimes it is required to parse MS Office documents word documents more often to put data into a database.
@@ -19,6 +19,8 @@ But in this case xPath is used to parse XML due to every XML node needs to be pu
 ## Program setup on the local machine
 * Open app.properties file
 * In this file setup your FTP and database credentials
+* Change property "spring.jpa.hibernate.ddl-auto" to create-drop if you want to drop the table after program is stopped of update if not
+* Change "spring.jpa.hibernate.dialect" property for your database SQL dialect
 * Open file log4j.properties
 * Change path to your log file "log4j.appender.file.File"
 

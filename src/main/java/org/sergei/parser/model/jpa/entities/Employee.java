@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Employee {
     @Id
     @Column(name = "emp_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
 
     @Column(name = "first_name")
@@ -84,35 +84,5 @@ public class Employee {
 
     public void setExperience(int experience) {
         this.experience = experience;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "empId=" + empId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", position='" + position + '\'' +
-                ", experience=" + experience +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return getAge() == employee.getAge() &&
-                getExperience() == employee.getExperience() &&
-                Objects.equals(getEmpId(), employee.getEmpId()) &&
-                Objects.equals(getFirstName(), employee.getFirstName()) &&
-                Objects.equals(getLastName(), employee.getLastName()) &&
-                Objects.equals(getPosition(), employee.getPosition());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getEmpId(), getFirstName(), getLastName(), getAge(), getPosition(), getExperience());
     }
 }

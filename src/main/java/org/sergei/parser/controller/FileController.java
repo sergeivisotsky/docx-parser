@@ -7,10 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class FileController {
@@ -41,6 +45,13 @@ public class FileController {
         }
 
         return new ModelAndView("uploaded", "fileName", processUpload(fileUploadVO));
+    }
+
+    // Servlet download process listener
+    @RequestMapping(value = "/download/{fileName:.+}", method = RequestMethod.GET)
+    public void download(HttpServletRequest request, HttpServletResponse response,
+                         @PathVariable("fileName") String fileName) {
+        fileOperations.serverDownload(response, fileName);
     }
 
     // File upload processing method

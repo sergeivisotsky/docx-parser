@@ -9,6 +9,7 @@
 <body>
 
 <p>File <b>${fileName}</b> was saved!</p>
+<p><a href="download/demo_doc.docx">Download</a></p>
 
 </body>
 </html>
