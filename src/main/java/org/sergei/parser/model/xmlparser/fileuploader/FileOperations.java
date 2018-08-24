@@ -1,16 +1,14 @@
 package org.sergei.parser.model.xmlparser.fileuploader;
 
-import org.sergei.parser.model.xmlparser.util.FileUploaderComponent;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.log4j.Logger;
+import org.sergei.parser.model.xmlparser.util.ParsingWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 @Component
@@ -30,10 +28,7 @@ public class FileOperations {
     private String PASSWORD;
 
     @Autowired
-    private FileUploaderComponent fileUploaderComponent;
-
-    @Autowired
-    private ServletContext context;
+    private ParsingWrapper parsingWrapper;
 
     private CommonsMultipartFile multipartFile;
 
@@ -64,7 +59,7 @@ public class FileOperations {
             }
 
             inputStream.close();
-            fileUploaderComponent.documentServicesCaller(localFile);
+            parsingWrapper.documentServicesCaller(localFile);
         } catch (IOException e) {
             LOGGER.error(e);
         } finally {
@@ -80,41 +75,26 @@ public class FileOperations {
     }
 
     // Method to process file upload from the server
-    public void serverDownload(HttpServletResponse response, String remoteFileName) {
+    public void serverDownload() {
         try {
             ftpClient.connect(SERVER, PORT);
             ftpClient.login(USERNAME, PASSWORD);
             ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
-            File localFile = new File("D:/Users/Sergei/Downloads" + File.pathSeparator + remoteFileName);
-            String mimeType = context.getMimeType(localFile.getPath());
+            String remoteFile = "/template.docx";
+            File local = new File("D:/Users/Sergei/Documents/JavaProjects/docxParserServlet/" +
+                    "src/main/resources/static" + remoteFile);
 
-            if (mimeType == null) {
-                mimeType = "application/msword";
-            }
-
-            response.setContentType(mimeType);
-            response.setHeader("Content-Disposition", "attachment; filename=" + remoteFileName);
-            response.setContentLength((int) localFile.length());
-
-            OutputStream outputStream = response.getOutputStream();
-            FileInputStream fileInputStream = new FileInputStream(localFile);
-
-            byte[] bytesArray = new byte[4096];
-            int bytesRead;
-
-            while ((bytesRead = fileInputStream.read(bytesArray)) != -1) {
-                outputStream.write(bytesArray, 0, bytesRead);
-            }
-
-            boolean done = ftpClient.completePendingCommand();
+            OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(local));
+            boolean done = ftpClient.retrieveFile(remoteFile, outputStream);
 
             if (done) {
                 LOGGER.info("File downloaded from the server");
             } else {
-                LOGGER.error("File not downloaded from the server");
+                LOGGER.error("Failed to download file from the server");
             }
+
             outputStream.close();
         } catch (IOException e) {
             LOGGER.error(e);

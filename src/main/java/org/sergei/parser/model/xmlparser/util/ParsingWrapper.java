@@ -12,7 +12,7 @@ import java.io.File;
  * Class to call all document parser service functions
  */
 @Component
-public class FileUploaderComponent {
+public class ParsingWrapper {
 
     @Autowired
     private DocElemParsers docElemParsers;

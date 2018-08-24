@@ -4,6 +4,10 @@ import org.sergei.parser.controller.pojo.FileUploadVO;
 import org.sergei.parser.controller.util.FileValidator;
 import org.sergei.parser.model.xmlparser.fileuploader.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class FileController {
@@ -48,10 +56,18 @@ public class FileController {
     }
 
     // Servlet download process listener
-    @RequestMapping(value = "/download/{fileName:.+}", method = RequestMethod.GET)
-    public void download(HttpServletRequest request, HttpServletResponse response,
-                         @PathVariable("fileName") String fileName) {
-        fileOperations.serverDownload(response, fileName);
+    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    public ResponseEntity<ByteArrayResource> download() throws IOException {
+        fileOperations.serverDownload();
+        Path path = Paths.get("D:/Users/Sergei/Documents/JavaProjects/docxParserServlet/" +
+                "src/main/resources/static/template.docx");
+        byte[] data = Files.readAllBytes(path);
+        ByteArrayResource resource = new ByteArrayResource(data);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + path.getFileName().toString())
+                .contentType(MediaType.APPLICATION_OCTET_STREAM).contentLength(data.length)
+                .body(resource);
     }
 
     // File upload processing method
