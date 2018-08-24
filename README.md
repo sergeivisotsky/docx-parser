@@ -17,10 +17,22 @@ A lot of API exists to parse word based documents in Java as an example Apache P
 But in this case xPath is used to parse XML due to every XML node needs to be put into a database in specific column but Apache POI or docx4j parses by paragraph.
 
 ## Program setup on the local machine
+* Java 1.8 is required
+* Add you database dependency in pom.xml example for PostgreSQL:
+```$xslt
+<dependency>
+    <groupId>postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>8.3-606.jdbc4</version>
+</dependency>
+```
 * Open app.properties file
 * In this file setup your FTP and database credentials
-* Change property "spring.jpa.hibernate.ddl-auto" to create-drop if you want to drop the table after program is stopped of update if not
-* Change "spring.jpa.hibernate.dialect" property for your database SQL dialect
+* Change property's "spring.datasource.driverClassName" value to your database driver class name
+* Change property's "spring.datasource.url" value to your database name and port
+* Next set your database username and password
+* Change property's "spring.jpa.hibernate.ddl-auto" value to create-drop if you want to drop the table after program is stopped of update if not
+* Change property's "spring.jpa.hibernate.dialect" value to your database SQL dialect
 * Open file log4j.properties
 * Change path to your log file "log4j.appender.file.File"
 
