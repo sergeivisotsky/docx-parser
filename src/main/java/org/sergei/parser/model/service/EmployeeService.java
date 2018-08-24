@@ -1,9 +1,9 @@
 package org.sergei.parser.model.service;
 
-import org.sergei.parser.model.jpa.dao.EmployeeDАO;
-import org.sergei.parser.model.jpa.entities.Employee;
-import org.sergei.parser.model.xmlparser.parser.DocElemParsers;
 import org.apache.log4j.Logger;
+import org.sergei.parser.model.jpa.entities.Employee;
+import org.sergei.parser.model.jpa.repos.EmployeeRepository;
+import org.sergei.parser.model.xmlparser.parser.DocElemParsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public class EmployeeService implements CustomServiceRepository {
     private static final Logger LOGGER = Logger.getLogger(EmployeeService.class);
 
     @Autowired
-    private EmployeeDАO employeeDАО;
+    private EmployeeRepository employeeRepository;
 
     @Autowired
     private DocElemParsers docElemParsers;
@@ -38,6 +38,6 @@ public class EmployeeService implements CustomServiceRepository {
             LOGGER.error(e);
         }
 
-        employeeDАО.addRecord(employee);
+        employeeRepository.save(employee);
     }
 }
