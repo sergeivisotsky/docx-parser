@@ -12,7 +12,7 @@
 
     <mvc:annotation-driven/>
     <context:component-scan base-package="org.sergei.parser"/>
-    <jpa:repositories base-package="org.sergei.parser.model.jpa.repos"/>
+    <jpa:repositories base-package="org.sergei.parser"/>
     <context:property-placeholder location="classpath:/app.properties"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -24,7 +24,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.sergei.parser.model"/>
+        <property name="packagesToScan" value="org.sergei.parser.entity"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
