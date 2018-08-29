@@ -2,8 +2,9 @@ package org.sergei.parser.xmlparser.fileuploader;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
-import org.apache.log4j.Logger;
 import org.sergei.parser.xmlparser.util.ParsingWrapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import java.io.*;
 
 @Component
 public class FileOperations {
-    private static final Logger LOGGER = Logger.getLogger(FileOperations.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Value("${ftp.server}")
     private String SERVER;
@@ -61,7 +62,7 @@ public class FileOperations {
             inputStream.close();
             parsingWrapper.documentServicesCaller(localFile);
         } catch (IOException e) {
-            LOGGER.error(e);
+            LOGGER.error(e.getMessage());
         } finally {
             try {
                 if (ftpClient.isConnected()) {
@@ -69,7 +70,7 @@ public class FileOperations {
                     ftpClient.disconnect();
                 }
             } catch (IOException e) {
-                LOGGER.error(e);
+                LOGGER.error(e.getMessage());
             }
         }
     }
@@ -97,7 +98,7 @@ public class FileOperations {
 
             outputStream.close();
         } catch (IOException e) {
-            LOGGER.error(e);
+            LOGGER.error(e.getMessage());
         } finally {
             try {
                 if (ftpClient.isConnected()) {
@@ -105,7 +106,7 @@ public class FileOperations {
                     ftpClient.disconnect();
                 }
             } catch (IOException e) {
-                LOGGER.error(e);
+                LOGGER.error(e.getMessage());
             }
         }
     }

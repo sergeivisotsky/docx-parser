@@ -1,16 +1,17 @@
 package org.sergei.parser.service;
 
-import org.apache.log4j.Logger;
 import org.sergei.parser.entity.Employee;
 import org.sergei.parser.jpa.EmployeeRepository;
 import org.sergei.parser.xmlparser.parser.DocElemParsers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeService implements CustomServiceRepository {
 
-    private static final Logger LOGGER = Logger.getLogger(EmployeeService.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -35,7 +36,7 @@ public class EmployeeService implements CustomServiceRepository {
             employee.setPosition((String) docElemParsers.xmlDataTextParser(EXPR_POSITION));
             employee.setExperience(Integer.parseInt((String) docElemParsers.xmlDataTextParser(EXPR_EXPERIENCE)));
         } catch (NumberFormatException e) {
-            LOGGER.error(e);
+            LOGGER.error(e.getMessage());
         }
 
         employeeRepository.save(employee);

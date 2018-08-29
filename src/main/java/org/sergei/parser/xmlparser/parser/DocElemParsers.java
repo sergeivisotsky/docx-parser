@@ -1,6 +1,7 @@
 package org.sergei.parser.xmlparser.parser;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Element;
@@ -12,7 +13,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 @Component
 public class DocElemParsers {
-    private static final Logger LOGGER = Logger.getLogger(DocElemParsers.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private XmlExtraction xmlExtractionService;
