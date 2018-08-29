@@ -20,7 +20,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.sergei.rest" level="info" />
+    <logger name="org.sergei.parser" level="info" />
 
     <root level="info">
         <appender-ref ref="file" />
