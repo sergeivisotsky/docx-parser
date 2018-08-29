@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeService implements CustomServiceRepository {
+public class EmployeeService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -25,7 +25,6 @@ public class EmployeeService implements CustomServiceRepository {
     private static final String EXPR_POSITION = "/w:document/w:body/w:p[@w14:paraId='7EA3CB2F']/w:r[3]";
     private static final String EXPR_EXPERIENCE = "/w:document/w:body/w:p[@w14:paraId='3C65B030']/w:r[2]";
 
-    @Override
     public void read() {
         Employee employee = new Employee();
 
