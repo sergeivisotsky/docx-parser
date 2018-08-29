@@ -1,6 +1,6 @@
-package org.sergei.parser.model.xmlparser.parser;
+package org.sergei.parser.xmlparser.parser;
 
-import org.sergei.parser.model.xmlparser.util.DocNamespaceContext;
+import org.sergei.parser.xmlparser.util.DocNamespaceContext;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;

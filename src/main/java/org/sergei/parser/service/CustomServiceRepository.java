@@ -1,4 +1,4 @@
-package org.sergei.parser.model.service;
+package org.sergei.parser.service;
 
 import org.springframework.stereotype.Repository;
 

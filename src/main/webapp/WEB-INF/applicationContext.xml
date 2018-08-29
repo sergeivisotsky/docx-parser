@@ -40,6 +40,6 @@
         <property name="EntityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean name="Employee" id="employee" class="org.sergei.parser.model.jpa.entities.Employee"/>
+    <bean name="Employee" id="employee" class="org.sergei.parser.entity.Employee"/>
 
 </beans>

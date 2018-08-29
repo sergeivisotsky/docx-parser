@@ -1,4 +1,4 @@
-package org.sergei.parser.model.xmlparser.parser;
+package org.sergei.parser.xmlparser.parser;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

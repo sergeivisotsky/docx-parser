@@ -1,9 +1,9 @@
-package org.sergei.parser.model.service;
+package org.sergei.parser.service;
 
 import org.apache.log4j.Logger;
-import org.sergei.parser.model.jpa.entities.Employee;
-import org.sergei.parser.model.jpa.repos.EmployeeRepository;
-import org.sergei.parser.model.xmlparser.parser.DocElemParsers;
+import org.sergei.parser.entity.Employee;
+import org.sergei.parser.jpa.EmployeeRepository;
+import org.sergei.parser.xmlparser.parser.DocElemParsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

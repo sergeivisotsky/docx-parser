@@ -1,7 +1,6 @@
-package org.sergei.parser.model.jpa.entities;
+package org.sergei.parser.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "employee")

@@ -1,9 +1,9 @@
-package org.sergei.parser.model.xmlparser.fileuploader;
+package org.sergei.parser.xmlparser.fileuploader;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.log4j.Logger;
-import org.sergei.parser.model.xmlparser.util.ParsingWrapper;
+import org.sergei.parser.xmlparser.util.ParsingWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

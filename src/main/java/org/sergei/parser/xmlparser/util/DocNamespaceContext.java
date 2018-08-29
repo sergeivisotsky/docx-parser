@@ -1,4 +1,4 @@
-package org.sergei.parser.model.xmlparser.util;
+package org.sergei.parser.xmlparser.util;
 
 import javax.xml.namespace.NamespaceContext;
 import java.util.HashMap;

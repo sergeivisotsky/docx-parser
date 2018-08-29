@@ -1,6 +1,6 @@
-package org.sergei.parser.model.jpa.repos;
+package org.sergei.parser.jpa;
 
-import org.sergei.parser.model.jpa.entities.Employee;
+import org.sergei.parser.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
