@@ -1,17 +1,17 @@
-package org.sergei.parser.controller.pojo;
+package org.sergei.parser.entity;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Component
-public class FileUploadVO {
+public class FileUpload {
     private CommonsMultipartFile file;
 
-    public FileUploadVO(CommonsMultipartFile file) {
+    public FileUpload(CommonsMultipartFile file) {
         this.file = file;
     }
 
-    public FileUploadVO() {
+    public FileUpload() {
 
     }
 

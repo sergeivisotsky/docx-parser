@@ -1,7 +1,7 @@
 package org.sergei.parser.controller;
 
-import org.sergei.parser.controller.pojo.FileUploadVO;
-import org.sergei.parser.controller.util.FileValidator;
+import org.sergei.parser.entity.FileUpload;
+import org.sergei.parser.validators.FileValidator;
 import org.sergei.parser.xmlparser.fileuploader.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -34,22 +34,22 @@ public class FileController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView shouldFileLoader() {
         ModelAndView model = new ModelAndView("upload_page");
-        model.addObject("formUpload", new FileUploadVO());
+        model.addObject("formUpload", new FileUpload());
 
         return model;
     }
 
     // Servlet form listener
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public ModelAndView upload(@ModelAttribute(value = "formUpload") FileUploadVO fileUploadVO,
+    public ModelAndView upload(@ModelAttribute(value = "formUpload") FileUpload fileUpload,
                                BindingResult result) {
-        fileValidator.validate(fileUploadVO, result);
+        fileValidator.validate(fileUpload, result);
 
         if (result.hasErrors()) {
             return new ModelAndView("upload_page");
         }
 
-        return new ModelAndView("uploaded", "fileName", processUpload(fileUploadVO));
+        return new ModelAndView("uploaded", "fileName", processUpload(fileUpload));
     }
 
     // Servlet download process listener
@@ -68,10 +68,10 @@ public class FileController {
     }
 
     // File upload processing method
-    private String processUpload(FileUploadVO fileUploadVO) {
+    private String processUpload(FileUpload fileUpload) {
         String fileName;
 
-        CommonsMultipartFile multipartFile = fileUploadVO.getFile();
+        CommonsMultipartFile multipartFile = fileUpload.getFile();
 
         fileOperations.setMultipartFile(multipartFile);
         fileOperations.serverUpload();
