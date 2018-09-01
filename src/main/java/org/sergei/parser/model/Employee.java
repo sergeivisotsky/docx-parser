@@ -1,4 +1,4 @@
-package org.sergei.parser.entity;
+package org.sergei.parser.model;
 
 import javax.persistence.*;
 

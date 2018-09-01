@@ -1,4 +1,4 @@
-package org.sergei.parser.entity;
+package org.sergei.parser.model;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;

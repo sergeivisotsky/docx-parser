@@ -1,6 +1,6 @@
 package org.sergei.parser.validators;
 
-import org.sergei.parser.entity.FileUpload;
+import org.sergei.parser.model.FileUpload;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

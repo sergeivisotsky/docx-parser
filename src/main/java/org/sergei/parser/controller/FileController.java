@@ -1,6 +1,6 @@
 package org.sergei.parser.controller;
 
-import org.sergei.parser.entity.FileUpload;
+import org.sergei.parser.model.FileUpload;
 import org.sergei.parser.validators.FileValidator;
 import org.sergei.parser.xmlparser.fileuploader.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;

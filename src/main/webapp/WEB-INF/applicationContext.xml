@@ -24,7 +24,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.sergei.parser.entity"/>
+        <property name="packagesToScan" value="org.sergei.parser.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
@@ -40,6 +40,6 @@
         <property name="EntityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean name="Employee" id="employee" class="org.sergei.parser.entity.Employee"/>
+    <bean name="Employee" id="employee" class="org.sergei.parser.model.Employee"/>
 
 </beans>
