@@ -2,7 +2,7 @@ package org.sergei.parser.service;
 
 import org.sergei.parser.model.Employee;
 import org.sergei.parser.jpa.EmployeeRepository;
-import org.sergei.parser.xmlparser.parser.DocElemParsers;
+import org.sergei.parser.xmlparser.DocElemParsers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

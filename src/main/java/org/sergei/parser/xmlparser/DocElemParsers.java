@@ -1,4 +1,4 @@
-package org.sergei.parser.xmlparser.parser;
+package org.sergei.parser.xmlparser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

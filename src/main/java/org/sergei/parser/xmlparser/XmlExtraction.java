@@ -1,4 +1,4 @@
-package org.sergei.parser.xmlparser.parser;
+package org.sergei.parser.xmlparser;
 
 import org.sergei.parser.xmlparser.util.DocNamespaceContext;
 import org.slf4j.Logger;

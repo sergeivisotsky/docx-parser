@@ -2,7 +2,7 @@ package org.sergei.parser.controller;
 
 import org.sergei.parser.model.FileUpload;
 import org.sergei.parser.validators.FileValidator;
-import org.sergei.parser.xmlparser.fileuploader.FileOperations;
+import org.sergei.parser.ftp.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;

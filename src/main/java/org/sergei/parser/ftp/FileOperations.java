@@ -1,4 +1,4 @@
-package org.sergei.parser.xmlparser.fileuploader;
+package org.sergei.parser.ftp;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;

@@ -1,8 +1,8 @@
 package org.sergei.parser.xmlparser.util;
 
 import org.sergei.parser.service.EmployeeService;
-import org.sergei.parser.xmlparser.parser.DocElemParsers;
-import org.sergei.parser.xmlparser.parser.XmlExtraction;
+import org.sergei.parser.xmlparser.DocElemParsers;
+import org.sergei.parser.xmlparser.XmlExtraction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
