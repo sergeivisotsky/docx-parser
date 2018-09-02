@@ -1,7 +1,7 @@
 package org.sergei.parser.service;
 
 import org.sergei.parser.model.Employee;
-import org.sergei.parser.jpa.EmployeeRepository;
+import org.sergei.parser.repository.EmployeeRepository;
 import org.sergei.parser.xmlparser.DocElemParsers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

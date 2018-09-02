@@ -1,4 +1,4 @@
-package org.sergei.parser.jpa;
+package org.sergei.parser.repository;
 
 import org.sergei.parser.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
