@@ -6,6 +6,10 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+/*
+* Class to perform file validation so that form wasn't empty
+* */
+
 @Component
 public class FileValidator implements Validator {
     @Override

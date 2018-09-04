@@ -11,6 +11,9 @@ import org.w3c.dom.NodeList;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 
+/*
+* Class with parser for different data types
+* */
 @Component
 public class DocElemParsers {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
@@ -23,6 +26,7 @@ public class DocElemParsers {
         xmlExtractionService.parseXmlFile();
     }
 
+    // Text parsing method
     public Object xmlDataTextParser(String expr) {
         String param;
         try {
@@ -48,6 +52,7 @@ public class DocElemParsers {
         return null;
     }
 
+    // Integer data parsing
     public Integer xmlDataIntParser(String expr) {
         Integer param;
         try {

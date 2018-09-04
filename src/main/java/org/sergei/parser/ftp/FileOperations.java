@@ -16,6 +16,7 @@ import java.io.*;
 public class FileOperations {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
+    // Values are taken from the app.properties file
     @Value("${ftp.server}")
     private String SERVER;
 
@@ -48,6 +49,7 @@ public class FileOperations {
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
             File localFile = new File(multipartFile.getOriginalFilename());
+            // Multipart file transfer to a regular file
             multipartFile.transferTo(localFile);
             String remoteFile = multipartFile.getOriginalFilename();
             InputStream inputStream = new FileInputStream(localFile);

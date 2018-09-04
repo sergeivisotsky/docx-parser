@@ -19,12 +19,14 @@ public class EmployeeService {
     @Autowired
     private DocElemParsers docElemParsers;
 
+    // xPath expressions to parse words document.xml file
     private static final String EXPR_FIRST_NAME = "/w:document/w:body/w:p[@w14:paraId='3DC39470']/w:r[2]";
     private static final String EXPR_LAST_LAME = "/w:document/w:body/w:p[@w14:paraId='18B9EE55']/w:r[2]";
     private static final String EXPR_AGE = "/w:document/w:body/w:p[@w14:paraId='04AE3ECF']/w:r[2]";
     private static final String EXPR_POSITION = "/w:document/w:body/w:p[@w14:paraId='7EA3CB2F']/w:r[3]";
     private static final String EXPR_EXPERIENCE = "/w:document/w:body/w:p[@w14:paraId='3C65B030']/w:r[2]";
 
+    // Method to read employee data
     public void read() {
         Employee employee = new Employee();
 

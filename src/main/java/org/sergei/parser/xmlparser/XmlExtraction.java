@@ -51,6 +51,7 @@ public class XmlExtraction {
         this.localFile = localFile;
     }
 
+    // Method used to extract .docx and parse xml file
     public void parseXmlFile() {
         try {
             // Gets .docx file
