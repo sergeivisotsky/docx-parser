@@ -65,9 +65,9 @@
 
         <!--MySQL Driver-->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.11</version>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>8.3-606.jdbc4</version>
         </dependency>
 
         <!--Servlet functionality dependency -->
