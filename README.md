@@ -1,5 +1,4 @@
 # docx-parser
-
 ## Task description
 * Servlet with form to upload file should be created
 * After .docx file is uploaded it should be stored on the server using FTP
