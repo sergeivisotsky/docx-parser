@@ -16,7 +16,7 @@ import java.io.*;
 public class FileOperations {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    // Values are taken from the app.properties file
+    // Values are taken from the application.properties file
     @Value("${ftp.server}")
     private String SERVER;
 
