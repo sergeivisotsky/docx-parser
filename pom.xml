@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.sergei</groupId>
-    <artifactId>docxParserServlet</artifactId>
+    <artifactId>docx-parser</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -148,6 +148,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>docxParserServlet</finalName>
+        <finalName>docs-parser</finalName>
     </build>
 </project>
