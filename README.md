@@ -1,4 +1,4 @@
-# docxParserServlet
+# docx-parser
 
 ## Task description
 * Servlet with form to upload file should be created
