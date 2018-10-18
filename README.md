@@ -1,4 +1,6 @@
 # docx-parser
+[![Build Status](https://travis-ci.com/sergeivisotsky/docx-parser.svg?branch=master)](https://travis-ci.com/sergeivisotsky/docx-parser)
+
 ## Task description
 * Servlet with form to upload file should be created
 * After .docx file is uploaded it should be stored on the server using FTP
