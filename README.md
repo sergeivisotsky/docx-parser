@@ -17,6 +17,14 @@ A lot of API exists to parse word based documents in Java as an example Apache P
 
 But in this case xPath is used to parse XML due to every XML node needs to be put into a database in specific column but Apache POI or docx4j parses by paragraph.
 
+## Technologies
+* Java 7
+* Apache Tomcat 7+
+* Apache Maven
+* Spring MVC
+* xPath
+* PostgreSQL
+
 ## Program setup on the local machine
 * JDK & JRE 1.8 required
 * Add you database dependency in pom.xml example for PostgreSQL:
