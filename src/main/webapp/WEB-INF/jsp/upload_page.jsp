@@ -1,5 +1,5 @@
 <%--
-  ~ Copyright (c) Sergei Visotsky, 2018
+  ~ Copyright (c) 2018 Sergei Visotsky
   --%>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
