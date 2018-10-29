@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Sergei Visotsky, 2018
+ */
+
 package org.sergei.parser.xmlparser.util;
 
 import javax.xml.namespace.NamespaceContext;

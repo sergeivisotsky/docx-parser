@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Sergei Visotsky, 2018
+ */
+
 package org.sergei.parser.validators;
 
 import org.sergei.parser.model.FileUpload;
