@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.xmlparser;
 
 import org.slf4j.Logger;
@@ -15,9 +11,11 @@ import org.w3c.dom.NodeList;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 
-/*
-* Class with parser for different data types
-* */
+/**
+ * @author Sergei Visotsky, 2018
+ * <p>
+ * Class with parser for different data types
+ */
 @Component
 public class DocElemParsers {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

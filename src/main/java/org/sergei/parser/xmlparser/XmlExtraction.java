@@ -27,6 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * @author Sergei Visotsky, 2018
+ * <p>
  * This class is used to parse XML document
  */
 @Component

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.service;
 
 import org.sergei.parser.model.Employee;
@@ -12,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Sergei Visotsky, 2018
+ */
 @Service
 public class EmployeeService {
 

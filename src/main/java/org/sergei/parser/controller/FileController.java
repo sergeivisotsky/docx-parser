@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.controller;
 
 import org.sergei.parser.model.FileUpload;
@@ -25,6 +21,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * @author Sergei Visotsky, 2018
+ */
 @Controller
 public class FileController {
 

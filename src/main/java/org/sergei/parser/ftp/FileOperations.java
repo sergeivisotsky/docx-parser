@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.ftp;
 
 import org.apache.commons.net.ftp.FTP;
@@ -16,6 +12,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.*;
 
+/**
+ * @author Sergei Visotsky, 2018
+ */
 @Component
 public class FileOperations {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

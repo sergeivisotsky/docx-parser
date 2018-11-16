@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.xmlparser.util;
 
 import javax.xml.namespace.NamespaceContext;
@@ -10,6 +6,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
+ * @author Sergei Visotsky, 2018
+ * <p>
  * This class is used to define xml namespaces
  * that are not recognized by default
  */

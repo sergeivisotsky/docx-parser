@@ -1,11 +1,10 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.model;
 
 import javax.persistence.*;
 
+/**
+ * @author Sergei Visotsky, 2018
+ */
 @Entity
 @Table(name = "employee")
 public class Employee {

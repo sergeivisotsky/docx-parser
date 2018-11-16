@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.validators;
 
 import org.sergei.parser.model.FileUpload;
@@ -10,10 +6,11 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-/*
-* Class to perform file validation so that form wasn't empty
-* */
-
+/**
+ * @author Sergei Visotsky, 2018
+ * <p>
+ * Class to perform file validation so that form wasn't empty
+ */
 @Component
 public class FileValidator implements Validator {
     @Override

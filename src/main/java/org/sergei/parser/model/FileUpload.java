@@ -1,12 +1,11 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.model;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+/**
+ * @author Sergei Visotsky, 2018
+ */
 @Component
 public class FileUpload {
     private CommonsMultipartFile file;

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.xmlparser.util;
 
 import org.sergei.parser.service.EmployeeService;
@@ -13,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
+ * @author Sergei Visotsky, 2018
+ * <p>
  * Class to call all document parser service functions
  */
 @Component
