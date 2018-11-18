@@ -7,9 +7,9 @@ import java.util.Map;
 
 /**
  * @author Sergei Visotsky, 2018
- * <p>
- * This class is used to define xml namespaces
- * that are not recognized by default
+ * <pre>
+ *    This class is used to define xml namespaces that are not recognized by default
+ * </pre>
  */
 public class DocNamespaceContext implements NamespaceContext {
 

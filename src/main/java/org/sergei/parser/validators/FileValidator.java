@@ -8,8 +8,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 /**
  * @author Sergei Visotsky, 2018
- * <p>
- * Class to perform file validation so that form wasn't empty
+ * <pre>
+ *    Class to perform file validation so that form wasn't empty
+ * </pre>
  */
 @Component
 public class FileValidator implements Validator {

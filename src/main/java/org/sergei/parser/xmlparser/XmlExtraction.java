@@ -28,13 +28,14 @@ import java.util.Map;
 
 /**
  * @author Sergei Visotsky, 2018
- * <p>
- * This class is used to parse XML document
+ * <pre>
+ *    This class is used to parse XML document
+ * </pre>
  */
 @Component
 public class XmlExtraction {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+    private static final Logger LOGGER = LoggerFactory.getLogger(XmlExtraction.class);
 
     private File localFile;
 

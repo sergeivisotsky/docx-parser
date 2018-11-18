@@ -13,12 +13,13 @@ import javax.xml.xpath.XPathExpressionException;
 
 /**
  * @author Sergei Visotsky, 2018
- * <p>
- * Class with parser for different data types
+ * <pre>
+ *    Class with parser for different data types
+ * </pre>
  */
 @Component
 public class DocElemParsers {
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+    private static final Logger LOGGER = LoggerFactory.getLogger(DocElemParsers.class);
 
     @Autowired
     private XmlExtraction xmlExtractionService;

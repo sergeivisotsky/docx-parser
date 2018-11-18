@@ -10,17 +10,21 @@ import java.io.File;
 
 /**
  * @author Sergei Visotsky, 2018
- * <p>
- * Class to call all document parser service functions
+ * <pre>
+ *    Class to call all document parser service functions
+ * </pre>
  */
 @Component
 public class ParsingWrapper {
 
-    @Autowired
-    private DocElemParsers docElemParsers;
+    private final DocElemParsers docElemParsers;
+    private final EmployeeService employeeService;
 
     @Autowired
-    private EmployeeService employeeService;
+    public ParsingWrapper(DocElemParsers docElemParsers, EmployeeService employeeService) {
+        this.docElemParsers = docElemParsers;
+        this.employeeService = employeeService;
+    }
 
     public void documentServicesCaller(File localFile) {
         // Call parsing functions

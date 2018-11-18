@@ -1,8 +1,8 @@
 package org.sergei.parser.controller;
 
+import org.sergei.parser.ftp.FileOperations;
 import org.sergei.parser.model.FileUpload;
 import org.sergei.parser.validators.FileValidator;
-import org.sergei.parser.ftp.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -27,11 +27,14 @@ import java.nio.file.Paths;
 @Controller
 public class FileController {
 
-    @Autowired
-    private FileValidator fileValidator;
+    private final FileValidator fileValidator;
+    private final FileOperations fileOperations;
 
     @Autowired
-    private FileOperations fileOperations;
+    public FileController(FileValidator fileValidator, FileOperations fileOperations) {
+        this.fileValidator = fileValidator;
+        this.fileOperations = fileOperations;
+    }
 
     // Method to display start page
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -59,7 +62,7 @@ public class FileController {
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public ResponseEntity<ByteArrayResource> download() throws IOException {
         fileOperations.serverDownload();
-        Path path = Paths.get("D:/Users/Sergei/Documents/JavaProjects/docxParserServlet/" +
+        Path path = Paths.get("D:/Users/Sergei/Documents/JavaProjects/docx-parser/" +
                 "src/main/resources/static/template.docx");
         byte[] data = Files.readAllBytes(path);
         ByteArrayResource resource = new ByteArrayResource(data);

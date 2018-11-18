@@ -15,7 +15,6 @@ public class FileUpload {
     }
 
     public FileUpload() {
-
     }
 
     public CommonsMultipartFile getFile() {

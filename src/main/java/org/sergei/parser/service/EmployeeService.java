@@ -14,13 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeService {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-
-    @Autowired
-    private EmployeeRepository employeeRepository;
-
-    @Autowired
-    private DocElemParsers docElemParsers;
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeService.class);
 
     // xPath expressions to parse words document.xml file
     private static final String EXPR_FIRST_NAME = "/w:document/w:body/w:p[@w14:paraId='3DC39470']/w:r[2]";
@@ -28,6 +22,15 @@ public class EmployeeService {
     private static final String EXPR_AGE = "/w:document/w:body/w:p[@w14:paraId='04AE3ECF']/w:r[2]";
     private static final String EXPR_POSITION = "/w:document/w:body/w:p[@w14:paraId='7EA3CB2F']/w:r[3]";
     private static final String EXPR_EXPERIENCE = "/w:document/w:body/w:p[@w14:paraId='3C65B030']/w:r[2]";
+
+    private final EmployeeRepository employeeRepository;
+    private final DocElemParsers docElemParsers;
+
+    @Autowired
+    public EmployeeService(EmployeeRepository employeeRepository, DocElemParsers docElemParsers) {
+        this.employeeRepository = employeeRepository;
+        this.docElemParsers = docElemParsers;
+    }
 
     // Method to read employee data
     public void read() {
