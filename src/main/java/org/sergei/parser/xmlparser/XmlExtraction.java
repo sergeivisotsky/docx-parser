@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2018 Sergei Visotsky
- */
-
 package org.sergei.parser.xmlparser;
 
 import org.sergei.parser.xmlparser.util.DocNamespaceContext;

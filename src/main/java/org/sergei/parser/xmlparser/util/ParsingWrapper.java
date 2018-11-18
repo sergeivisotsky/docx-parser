@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
- * @author Sergei Visotsky, 2018
+ * @author Sergei Visotsky, 018
  * <pre>
  *    Class to call all document parser service functions
  * </pre>
