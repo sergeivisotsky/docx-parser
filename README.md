@@ -18,7 +18,7 @@ A lot of API exists to parse word based documents in Java as an example Apache P
 But in this case no tool can be used and consequently xPath is used to parse XML due to every XML node needs to be put into a database in specific column but Apache POI or docx4j parses by paragraph.
 
 ## Technologies
-* Java 7
+* Java 8
 * Apache Tomcat 7+
 * Apache Maven
 * Spring MVC
