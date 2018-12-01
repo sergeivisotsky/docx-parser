@@ -35,15 +35,15 @@ But in this case no tool can be used and consequently xPath is used to parse XML
     <version>8.3-606.jdbc4</version>
 </dependency>
 ```
-1. Open app.properties file
-2. In this file setup your FTP and database credentials
-3. Change property's `spring.datasource.driverClassName` value to your database driver class name
-4. Change property's `spring.datasource.url` value to your database name and port
-5. Next set your database username and password
-6. Change property's `spring.jpa.hibernate.ddl-auto` value to create-drop if you want to drop the table after program is stopped of update if not
-7. Change property's `spring.jpa.hibernate.dialect` value to your database SQL dialect
-8. Open file log4j.properties
-9. Change path to your log file "log4j.appender.file.File"
-10. To create executable .war achieve perform `mvn clean package` command 
+* Open app.properties file
+* In this file setup your FTP and database credentials
+* Change property's `spring.datasource.driverClassName` value to your database driver class name
+* Change property's `spring.datasource.url` value to your database name and port
+* Next set your database username and password
+* Change property's `spring.jpa.hibernate.ddl-auto` value to create-drop if you want to drop the table after program is stopped of update if not
+* Change property's `spring.jpa.hibernate.dialect` value to your database SQL dialect
+* Open file log4j.properties
+* Change path to your log file "log4j.appender.file.File"
+* To create executable .war achieve perform `mvn clean package` command 
 
 INFO: Example .docx to parse as well as unarchived .docx are located in /resources/static/docs folder and template.docx file should be located on the FTP server.
