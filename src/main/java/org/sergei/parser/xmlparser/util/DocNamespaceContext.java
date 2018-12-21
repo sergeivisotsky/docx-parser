@@ -6,10 +6,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * @author Sergei Visotsky, 2018
- * <pre>
- *    This class is used to define xml namespaces that are not recognized by default
- * </pre>
+ * This class is used to define xml namespaces that are not recognized by default
+ *
+ * @author Sergei Visotsky
  */
 public class DocNamespaceContext implements NamespaceContext {
 

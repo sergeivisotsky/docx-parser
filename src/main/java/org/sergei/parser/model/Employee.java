@@ -3,7 +3,7 @@ package org.sergei.parser.model;
 import javax.persistence.*;
 
 /**
- * @author Sergei Visotsky, 2018
+ * @author Sergei Visotsky
  */
 @Entity
 @Table(name = "employee")

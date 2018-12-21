@@ -12,10 +12,9 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 
 /**
- * @author Sergei Visotsky, 2018
- * <pre>
- *    Class with parser for different data types
- * </pre>
+ * Class with parser for different data types
+ *
+ * @author Sergei Visotsky
  */
 @Component
 public class DocElemParsers {

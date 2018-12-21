@@ -13,7 +13,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import java.io.*;
 
 /**
- * @author Sergei Visotsky, 2018
+ * @author Sergei Visotsky
  */
 @Component
 public class FileOperations {

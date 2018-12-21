@@ -23,10 +23,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Sergei Visotsky, 2018
- * <pre>
- *    This class is used to parse XML document
- * </pre>
+ * This class is used to parse XML document
+ *
+ * @author Sergei Visotsky
  */
 @Component
 public class XmlExtraction {
