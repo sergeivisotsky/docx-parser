@@ -42,7 +42,7 @@ public class XmlExtraction {
         return document;
     }
 
-    public XPath getXPath() {
+    XPath getXPath() {
         return xPath;
     }
 
@@ -53,8 +53,10 @@ public class XmlExtraction {
         this.localFile = localFile;
     }
 
-    // Method used to extract .docx and parse xml file
-    public void parseXmlFile() {
+    /**
+     * Method used to extract .docx and parse xml file
+     */
+    void parseXmlFile() {
         try {
             // Gets .docx file
             URI docxUri = URI.create("jar:" + localFile.toURI());

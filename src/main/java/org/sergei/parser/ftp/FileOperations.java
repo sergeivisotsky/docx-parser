@@ -19,7 +19,6 @@ import java.io.*;
 public class FileOperations {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileOperations.class);
 
-    // Values are taken from the application.properties file
     @Value("${ftp.server}")
     private String SERVER;
 
@@ -32,19 +31,21 @@ public class FileOperations {
     @Value("${ftp.password}")
     private String PASSWORD;
 
+    private final FTPClient ftpClient;
+    private final ParsingWrapper parsingWrapper;
+
     @Autowired
-    private ParsingWrapper parsingWrapper;
-
-    private CommonsMultipartFile multipartFile;
-
-    public void setMultipartFile(CommonsMultipartFile multipartFile) {
-        this.multipartFile = multipartFile;
+    public FileOperations(FTPClient ftpClient, ParsingWrapper parsingWrapper) {
+        this.ftpClient = ftpClient;
+        this.parsingWrapper = parsingWrapper;
     }
 
-    private FTPClient ftpClient = new FTPClient();
-
-    // Method to perform file download
-    public void serverUpload() {
+    /**
+     * Method to upload file on the server
+     *
+     * @param multipartFile file to be uploaded as an input argument
+     */
+    public void serverUpload(CommonsMultipartFile multipartFile) {
         try {
             ftpClient.connect(SERVER, PORT);
             ftpClient.login(USERNAME, PASSWORD);
@@ -80,7 +81,9 @@ public class FileOperations {
         }
     }
 
-    // Method to process file upload from the server
+    /**
+     * Method to download file from the server
+     */
     public void serverDownload() {
         try {
             ftpClient.connect(SERVER, PORT);

@@ -20,6 +20,7 @@ But in this case no tool can be used and consequently xPath is used to parse XML
 ## Technologies
 * Java 8
 * Spring Boot 2
+* JPA
 * Thymeleaf
 * Apache Maven
 * xPath

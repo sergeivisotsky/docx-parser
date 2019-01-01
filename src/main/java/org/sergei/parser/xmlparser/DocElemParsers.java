@@ -28,7 +28,12 @@ public class DocElemParsers {
         xmlExtractionService.parseXmlFile();
     }
 
-    // Text parsing method
+    /**
+     * Text parsing method
+     *
+     * @param expr expression up to the document place where is stored info to be parsed
+     * @return content parsed
+     */
     public Object xmlDataTextParser(String expr) {
         String param;
         try {
@@ -54,7 +59,12 @@ public class DocElemParsers {
         return null;
     }
 
-    // Integer data parsing
+    /**
+     * Integer data parsing
+     *
+     * @param expr expression up to the document place where is stored info to be parsed
+     * @return content parsed
+     */
     public Integer xmlDataIntParser(String expr) {
         Integer param;
         try {

@@ -32,13 +32,23 @@ public class FileController {
         this.fileOperations = fileOperations;
     }
 
-    // Method to display start page
+    /**
+     * Method to display start page
+     *
+     * @return start page view
+     */
     @GetMapping("/")
     public String shouldFileLoader() {
         return "upload_page";
     }
 
-    // Servlet form listener
+    /**
+     * Method to upload file on the server
+     *
+     * @param multipartFile      file to be uploaded given as an input argument
+     * @param redirectAttributes parameter to be invoked in case of failures
+     * @return view of success
+     */
     @PostMapping("/upload")
     public ModelAndView upload(@RequestParam("file") CommonsMultipartFile multipartFile,
                                RedirectAttributes redirectAttributes) {
@@ -49,7 +59,12 @@ public class FileController {
         return new ModelAndView("uploaded", "fileName", processUpload(multipartFile));
     }
 
-    // Servlet download process listener
+    /**
+     * Method to process file download
+     *
+     * @return File download
+     * @throws IOException input-output exception
+     */
     @GetMapping("/download")
     public ResponseEntity<ByteArrayResource> download() throws IOException {
         fileOperations.serverDownload();
@@ -64,12 +79,16 @@ public class FileController {
                 .body(resource);
     }
 
-    // File upload processing method
+    /**
+     * File upload processing method
+     *
+     * @param commonsMultipartFile file to be uploaded
+     * @return name of the saved file
+     */
     private String processUpload(CommonsMultipartFile commonsMultipartFile) {
         String fileName;
 
-        fileOperations.setMultipartFile(commonsMultipartFile);
-        fileOperations.serverUpload();
+        fileOperations.serverUpload(commonsMultipartFile);
         fileName = commonsMultipartFile.getOriginalFilename();
 
         return fileName;

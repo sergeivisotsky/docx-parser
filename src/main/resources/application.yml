@@ -1,0 +1,21 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: parser
+    url: jdbc:postgresql://localhost:5432/docx_parser
+    username: parser
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
+        hbm2ddl:
+          auto: update
+ftp:
+  password: docx
+  port: 21
+  server: 127.0.0.1
+  username: docx
+missing:
+  multipartFile: No multipartFile choose
