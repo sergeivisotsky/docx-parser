@@ -19,3 +19,5 @@ ftp:
   username: docx
 missing:
   multipartFile: No multipartFile choose
+download-file:
+  path: D:/Users/Sergei/Documents/JavaProjects/docx-parser/src/main/resources/static/template.docx

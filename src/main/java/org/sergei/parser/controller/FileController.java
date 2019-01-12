@@ -18,6 +18,7 @@ package org.sergei.parser.controller;
 
 import org.sergei.parser.ftp.FileOperations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -40,6 +41,9 @@ import java.nio.file.Paths;
  */
 @Controller
 public class FileController {
+
+    @Value("${download-file.path}")
+    private String pathToFile;
 
     private final FileOperations fileOperations;
 
@@ -84,8 +88,7 @@ public class FileController {
     @GetMapping("/download")
     public ResponseEntity<ByteArrayResource> download() throws IOException {
         fileOperations.serverDownload();
-        Path path = Paths.get("D:/Users/Sergei/Documents/JavaProjects/docx-parser/" +
-                "src/main/resources/static/template.docx");
+        Path path = Paths.get(pathToFile);
         byte[] data = Files.readAllBytes(path);
         ByteArrayResource resource = new ByteArrayResource(data);
 
