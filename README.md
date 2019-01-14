@@ -8,7 +8,7 @@
 * After document.xml should be parsed in memory to extract all the necessary at put it to the relational database
 * It should be able to download data from the server via FTP
 
-## Specification
+## Summary
 Sometimes it is required to parse MS Office Word documents to put data into the database.
 
 Every word document is a .docx file which is an archieve consisting XML files.
